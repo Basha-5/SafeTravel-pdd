@@ -89,9 +89,9 @@ Total Findings: 8 (Critical: 1 | High: 3 | Medium: 3 | Low: 1)
 
 ---
 
-## 🚀 5. CI/CD GitHub Actions Pipeline
+## 🚀 5. CI/CD Security & QA Pipeline
 
-Located in [`.github/workflows/security-review.yml`](.github/workflows/security-review.yml). Automatically runs on every push and pull request:
+Located in [`ci/security-review.yml`](ci/security-review.yml). Contains automated jobs for:
 1. **`security-audit`**: Runs SAST, dependency vulnerability audit, and generates Excel findings.
 2. **`selenium-e2e-testing`**: Validates web frontend E2E suite and packages 300 test cases into downloadable artifact.
 3. **`appium-mobile-testing`**: Validates mobile suite and packages 300 test cases into downloadable artifact.
