@@ -1,0 +1,15 @@
+{
+  "name": "safetravel-selenium-tests",
+  "version": "1.0.0",
+  "description": "Selenium WebDriver E2E Automation Test Suite for SafeTravel",
+  "main": "tests/login-tests.js",
+  "scripts": {
+    "test": "node tests/login-tests.js",
+    "test:headed": "set HEADLESS=false && node tests/login-tests.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.22.0",
+    "chromedriver": "^126.0.0",
+    "xlsx": "^0.18.5"
+  }
+}

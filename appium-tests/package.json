@@ -1,0 +1,16 @@
+{
+  "name": "safetravel-appium-tests",
+  "version": "1.0.0",
+  "description": "Appium Mobile E2E Automation Testing Suite for SafeTravel App",
+  "main": "tests/app-login-tests.js",
+  "scripts": {
+    "test:android": "node tests/app-login-tests.js --platform android",
+    "test:ios": "node tests/app-login-tests.js --platform ios",
+    "test": "node tests/app-login-tests.js"
+  },
+  "dependencies": {
+    "webdriverio": "^8.38.0",
+    "appium": "^2.11.1",
+    "xlsx": "^0.18.5"
+  }
+}
