@@ -17,6 +17,7 @@ import {
 import { useLocation } from '../../context/LocationContext';
 import { useAuth } from '../../context/AuthContext';
 import { sosAPI, contactsAPI } from '../../services/api';
+import { androidBridge } from '../../services/androidBridge';
 import type { EmergencyContact, SOSAlert } from '../../types';
 import toast from 'react-hot-toast';
 
@@ -85,6 +86,7 @@ const SOSPage = () => {
 
   const handleSOSButtonClick = () => {
     if (sosState === 'idle') {
+      androidBridge.vibrate(300);
       setCountdown(5);
       setSosState('countdown');
       toast('SOS Countdown started. Tap Cancel if by mistake.', {
@@ -115,6 +117,7 @@ const SOSPage = () => {
       );
       setActiveAlert(alert);
       setSosState('active');
+      androidBridge.triggerSOS(lat, lng, user?.full_name);
       toast.error('EMERGENCY SOS IS NOW ACTIVE!');
       toast.success('Emergency alert notification email dispatched via Resend!', { icon: '📧', duration: 5000 });
 
